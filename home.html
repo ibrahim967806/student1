@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome to My Site!</h1>
+{% if user.is_authenticated %}
+    <div class="alert alert-success">
+        You're logged in as <strong>{{ user.username }}</strong>.
+    </div>
+{% else %}
+    <div class="alert alert-info">
+        Please <a href="{% url 'login' %}">login</a> to continue.
+    </div>
+{% endif %}
+{% endblock %}
